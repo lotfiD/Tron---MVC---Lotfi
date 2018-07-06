@@ -1,9 +1,9 @@
-package snake;
+package controller;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class Direction extends Snake implements KeyListener  {
+public class Direction extends ControllerFacade implements KeyListener  {
 	
 	//Comment utiliser les attributs présent dans le Snake ?
 	@Override

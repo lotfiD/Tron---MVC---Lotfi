@@ -1,4 +1,4 @@
-package snake;
+package model;
 
 import java.awt.Dimension;
 import java.awt.Point;

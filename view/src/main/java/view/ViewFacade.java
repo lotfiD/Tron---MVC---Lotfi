@@ -15,6 +15,8 @@ public class ViewFacade implements IView {
      */
     public ViewFacade() {
         super();
+        //Frame
+        //RenderPanel
     }
 
     /*

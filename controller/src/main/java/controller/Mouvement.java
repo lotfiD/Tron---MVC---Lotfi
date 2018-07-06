@@ -1,4 +1,4 @@
-package snake;
+package controller;
 
 import java.awt.Point;
 import java.awt.event.ActionEvent;
@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 
 
-public class Mouvement extends Snake implements ActionListener{
+public class Mouvement extends ControllerFacade implements ActionListener{
 
 	
 	// Comment utiliser les attributs présent dans Snake ?

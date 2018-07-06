@@ -33,6 +33,8 @@ public class ControllerFacade implements IController {
         super();
         this.view = view;
         this.model = model;
+        //Mouvement
+        //Direction
     }
 
     /**

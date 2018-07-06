@@ -1,10 +1,12 @@
-package snake;
+package view;
 
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 
+import controller.ControllerFacade;
 
-public class Frame extends Snake {
+
+public class Frame extends ViewFacade{
 	
 	public Frame(){
 	

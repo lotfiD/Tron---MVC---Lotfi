@@ -1,4 +1,4 @@
-package snake;
+package view;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -9,7 +9,7 @@ import javax.swing.JPanel;
 /**
  * @author Lotfi Djaileb
  */
-public class RenderPanel extends JPanel
+public class RenderPanel extends JPanel  //ViewFacade
 {
 
 	public static final Color GREEN= new Color(1666073); // Panel de couleur background remplacer par le Background Tron
