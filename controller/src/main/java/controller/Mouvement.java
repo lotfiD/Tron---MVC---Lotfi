@@ -1,12 +1,25 @@
 package controller;
 
 import java.awt.Point;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
 
 public class Mouvement extends ControllerFacade implements ActionListener{
+	
+	public RenderPanel renderPanel;
+	
+	public int ticks = 0, direction1 = DOWN1,direction2 = UP2, tailLength1 = 10,tailLength2 = 10, time;
+	
+	public ArrayList<Point> snakeParts1 = new ArrayList<Point>();
+	
+	public ArrayList<Point> snakeParts2 = new ArrayList<Point>();
+
+	public Point head1,head2;
+
+	public boolean over1 = false,over2 = false;
 
 	
 	// Comment utiliser les attributs présent dans Snake ?

@@ -12,13 +12,15 @@ import model.dao.ExampleDAO;
  * @version 1.0
  */
 public final class ModelFacade implements IModel {
+	
+	public Snake Snake;
 
     /**
      * Instantiates a new model facade.
      */
     public ModelFacade() {
         super();
-        //Snake
+        Snake = new Snake();//Snake
     }
 
     /*

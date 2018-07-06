@@ -5,6 +5,8 @@ import java.awt.Point;
 
 import javax.swing.JPanel;
 
+import model.RenderPanel;
+
 @SuppressWarnings("serial")
 /**
  * @author Lotfi Djaileb
@@ -12,6 +14,7 @@ import javax.swing.JPanel;
 public class RenderPanel extends JPanel  //ViewFacade
 {
 
+	
 	public static final Color GREEN= new Color(1666073); // Panel de couleur background remplacer par le Background Tron
 
 	@Override

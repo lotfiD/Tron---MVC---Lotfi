@@ -9,14 +9,17 @@ import javax.swing.JOptionPane;
  * @version 1.0
  */
 public class ViewFacade implements IView {
+	
+	public Frame Frame;
+	public RenderPanel RenderPanel;
 
     /**
      * Instantiates a new view facade.
      */
     public ViewFacade() {
         super();
-        //Frame
-        //RenderPanel
+        Frame = new Frame();//Frame
+        RenderPanel= new RenderPanel();//RenderPanel
     }
 
     /*

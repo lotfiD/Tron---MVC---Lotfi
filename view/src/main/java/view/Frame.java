@@ -1,12 +1,18 @@
 package view;
 
+import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
-
-import controller.ControllerFacade;
+import java.awt.event.KeyListener;
 
 
 public class Frame extends ViewFacade{
+	
+	public RenderPanel renderPanel;
+	
+	public JFrame jframe;
+	
+	public Dimension dim;
 	
 	public Frame(){
 	

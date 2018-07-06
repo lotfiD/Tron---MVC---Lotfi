@@ -14,6 +14,10 @@ import view.IView;
  * @version 1.0
  */
 public class ControllerFacade implements IController {
+	
+	public Direction Direction;
+	
+    public Mouvement Mouvement;
 
     /** The view. */
     private final IView  view;
@@ -33,8 +37,8 @@ public class ControllerFacade implements IController {
         super();
         this.view = view;
         this.model = model;
-        //Mouvement
-        //Direction
+        Mouvement = new Mouvement();//Mouvement
+        Direction = new Direction();//Direction
     }
 
     /**
