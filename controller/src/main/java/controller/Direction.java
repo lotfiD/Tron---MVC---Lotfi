@@ -6,7 +6,9 @@ import java.awt.event.KeyListener;
 
 
 public class Direction implements KeyListener  {
-
+    
+	public ControllerFacade ControllerFacade;
+	
      public Direction ()  {
      }
 	//Comment utiliser les attributs présent dans le Snake ?
@@ -67,7 +69,7 @@ public class Direction implements KeyListener  {
 		{
 			if (over1)                // Pour relancer le jeu
 			{
-				model.Snake.startGame();
+				model.Snake.startGame(); //pourquoi ca marche dans le view et pas ici
 			}
 			if (over2)                // Pour relancer le jeu
 			{

@@ -19,11 +19,9 @@ import javax.swing.Timer;
 public class Snake
 {
 
-	public static Snake snake1;
+	public static Snake snake;
 	
 	public JFrame jframe;
-
-    public RenderPanel renderPanel;
 
 	public Timer timer = new Timer(20, (ActionListener) this);
 
@@ -44,17 +42,9 @@ public class Snake
 	public static boolean over2 = false;
    
 	public Dimension dim;
-
-	/*		public static void main(String[] args)
-	{
-		snake1 = new Snake();                             //Le Programme marche si je fais ca 
-	} 
-
-} */
 	
 	public Snake()
 	{
-		
 	}
 
 	public static void startGame() //Ce qui se passe au debut du jeu
@@ -71,7 +61,8 @@ public class Snake
 		head2 = new Point(118,72);
 		snakeParts1.clear();
 		snakeParts2.clear();
-		timer.start();
+		timer.start(); // pourquoi quand je le met dans le constructeur de snake 
+		                //je n'ai pas besoin de static et le timer marche
 	}
 }	
 

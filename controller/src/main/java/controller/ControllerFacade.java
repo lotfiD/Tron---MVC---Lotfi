@@ -37,8 +37,8 @@ public class ControllerFacade implements IController {
         super();
         this.view = view;
         this.model = model;
-        Mouvement = new Mouvement(); //Mouvement
-        Direction = new Direction(); //Direction
+        this.Mouvement = new Mouvement(); //Mouvement
+        this.Direction = new Direction(); //Direction
     }
 
     /**

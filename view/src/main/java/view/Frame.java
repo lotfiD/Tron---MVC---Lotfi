@@ -8,6 +8,8 @@ import java.awt.event.KeyListener;
 
 public class Frame {
 	
+	public ViewFacade ViewFacade;
+	
 	public RenderPanel renderPanel;
 	
 	public JFrame jframe;

@@ -18,8 +18,8 @@ public class ViewFacade implements IView {
      */
     public ViewFacade() {
         super();
-        Frame = new Frame();//Frame
-        RenderPanel= new RenderPanel();//RenderPanel
+        this.Frame = new Frame();//Frame
+        this.RenderPanel= new RenderPanel();//RenderPanel
     }
 
     /*

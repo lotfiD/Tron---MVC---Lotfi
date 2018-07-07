@@ -14,6 +14,9 @@ import model.Snake;
 public class RenderPanel extends JPanel  //ViewFacade
 {
 	
+	public ViewFacade ViewFacade;
+	
+	public Frame Frame;
 	/**
 	 * 
 	 */
@@ -26,7 +29,7 @@ public class RenderPanel extends JPanel  //ViewFacade
 	{
 		super.paintComponent(g);
 		
-		Snake snake = Snake.snake1;
+		Snake snake = Snake.snake;
 
 		g.setColor(GREEN); // Le background
 		
