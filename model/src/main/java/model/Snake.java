@@ -1,5 +1,7 @@
 package model;
-
+import model.*;
+import view.*;
+import controller.*;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
@@ -21,33 +23,41 @@ public class Snake
 	
 	public JFrame jframe;
 
-	public RenderPanel renderPanel;
+    public RenderPanel renderPanel;
 
-	public Timer timer = new Timer(20, this);
+	public Timer timer = new Timer(20, (ActionListener) this);
 
-	public ArrayList<Point> snakeParts1 = new ArrayList<Point>();
-	
-	public ArrayList<Point> snakeParts2 = new ArrayList<Point>();
+	public static ArrayList<Point> snakeParts1 = new ArrayList<Point>();
+
+	public static ArrayList<Point> snakeParts2 = new ArrayList<Point>();
 
 	public static final int UP1 = 0, DOWN1 = 1, LEFT1 = 2, RIGHT1 = 3, SCALE1 = 5; //sélectionne la taille du 1er serpent
 
 	public static final int UP2 = 0, DOWN2 = 1, LEFT2 = 2, RIGHT2 = 3, SCALE2 = 5; // 2nd Joueur
 	
-	public int ticks = 0, direction1 = DOWN1,direction2 = UP2, tailLength1 = 10,tailLength2 = 10, time;
+	public static int ticks = 0, direction1 = DOWN1,direction2 = UP2, tailLength1 = 10,tailLength2 = 10, time;
 
-	public Point head1,head2;
+	public static Point head1,head2;
 
-	public boolean over1 = false,over2 = false;
-	
+	public static boolean over1 = false;
+
+	public static boolean over2 = false;
    
 	public Dimension dim;
 
+	/*		public static void main(String[] args)
+	{
+		snake1 = new Snake();                             //Le Programme marche si je fais ca 
+	} 
+
+} */
+	
 	public Snake()
 	{
 		
 	}
 
-	public void startGame() //Ce qui se passe au debut du jeu
+	public static void startGame() //Ce qui se passe au debut du jeu
 	{
 		over1 = false;
 		over2 = false;
@@ -63,10 +73,5 @@ public class Snake
 		snakeParts2.clear();
 		timer.start();
 	}
-	
-/*		public static void main(String[] args)
-	{
-		snake1 = new Snake();                             //Le Programme marche si je fais ca 
-	} 
+}	
 
-} */

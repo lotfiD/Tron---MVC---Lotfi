@@ -7,9 +7,13 @@ import java.awt.event.ActionListener;
 
 
 
-public class Mouvement extends ControllerFacade implements ActionListener{
+public class Mouvement implements ActionListener{
 	
-	public RenderPanel renderPanel;
+ //   public RenderPanel renderPanel;
+    
+	public static final int UP1 = 0, DOWN1 = 1, LEFT1 = 2, RIGHT1 = 3, SCALE1 = 5; //sélectionne la taille du 1er serpent
+
+	public static final int UP2 = 0, DOWN2 = 1, LEFT2 = 2, RIGHT2 = 3, SCALE2 = 5; // 2nd Joueur
 	
 	public int ticks = 0, direction1 = DOWN1,direction2 = UP2, tailLength1 = 10,tailLength2 = 10, time;
 	

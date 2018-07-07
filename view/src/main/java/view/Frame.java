@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import java.awt.event.KeyListener;
 
 
-public class Frame extends ViewFacade{
+public class Frame {
 	
 	public RenderPanel renderPanel;
 	
@@ -24,9 +24,10 @@ public class Frame extends ViewFacade{
 	jframe.setLocation(dim.width / 2 - jframe.getWidth() / 2, dim.height / 2 - jframe.getHeight() / 2);
 	jframe.add(renderPanel = new RenderPanel());
 	jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	jframe.addKeyListener(this);
-	startGame();
+	jframe.addKeyListener((KeyListener) this);
+	model.Snake.startGame();
 	}
+
 	
 }
 

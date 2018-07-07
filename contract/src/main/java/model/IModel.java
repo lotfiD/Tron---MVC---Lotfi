@@ -10,6 +10,10 @@ import java.util.List;
  * @version 1.0
  */
 public interface IModel {
+	
+	public static void startGame() {
+		
+	}
 
     /**
      * Gets the example by id.

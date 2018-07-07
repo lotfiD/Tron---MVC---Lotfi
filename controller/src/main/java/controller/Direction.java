@@ -3,11 +3,12 @@ package controller;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import model.IModel;
-import view.IView;
 
-public class Direction extends ControllerFacade implements KeyListener  {
 
+public class Direction implements KeyListener  {
+
+     public Direction ()  {
+     }
 	//Comment utiliser les attributs présent dans le Snake ?
 	public static final int UP1 = 0, DOWN1 = 1, LEFT1 = 2, RIGHT1 = 3, SCALE1 = 5; //sélectionne la taille du 1er serpent
 
@@ -66,11 +67,11 @@ public class Direction extends ControllerFacade implements KeyListener  {
 		{
 			if (over1)                // Pour relancer le jeu
 			{
-				startGame();
+				model.Snake.startGame();
 			}
 			if (over2)                // Pour relancer le jeu
 			{
-				startGame();
+				model.Snake.startGame();
 			}
 		}
 	}

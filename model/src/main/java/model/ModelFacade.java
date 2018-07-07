@@ -22,6 +22,12 @@ public final class ModelFacade implements IModel {
         super();
         Snake = new Snake();//Snake
     }
+    
+	public void startGame() {
+		model.Snake.startGame();
+		
+	}
+
 
     /*
      * (non-Javadoc)
@@ -49,5 +55,6 @@ public final class ModelFacade implements IModel {
     public List<Example> getAllExamples() throws SQLException {
         return ExampleDAO.getAllExamples();
     }
+
 
 }
