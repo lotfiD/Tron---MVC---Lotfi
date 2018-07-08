@@ -20,11 +20,11 @@ public final class ModelFacade implements IModel {
      */
     public ModelFacade() {
         super();
-        this.Snake = new Snake();//Snake
+        Snake = new Snake();//Snake
     }
     
 	public void startGame() {
-		model.Snake.startGame();
+		Snake.startGame();
 		
 	}
 

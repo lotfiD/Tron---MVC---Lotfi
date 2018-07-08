@@ -5,6 +5,7 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import java.awt.event.KeyListener;
 
+import model.*;
 
 public class Frame {
 	
@@ -15,6 +16,8 @@ public class Frame {
 	public JFrame jframe;
 	
 	public Dimension dim;
+	
+	public Snake Snake;
 	
 	public Frame(){
 	
@@ -27,9 +30,9 @@ public class Frame {
 	jframe.add(renderPanel = new RenderPanel());
 	jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	jframe.addKeyListener((KeyListener) this);
-	model.Snake.startGame();
+	Snake.startGame();  // pk ca marche uniquement quand la méthode est static 
 	}
 
-	
+
 }
 

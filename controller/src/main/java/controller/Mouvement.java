@@ -1,17 +1,17 @@
 package controller;
-import model.*;
 import java.awt.Point;
-import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.util.ArrayList;
+import view.*;
+import model.*;
 
 
 public class Mouvement implements ActionListener{
 	
 	public ControllerFacade ControllerFacade;
 	
-    public RenderPanel renderPanel;
+    //public RenderPanel renderPanel; //RenderPanel faut il l'instancier pour qu'il puisse marcher
     
 	public static final int UP1 = 0, DOWN1 = 1, LEFT1 = 2, RIGHT1 = 3, SCALE1 = 5; //sélectionne la taille du 1er serpent
 
@@ -33,7 +33,7 @@ public class Mouvement implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent arg0)
 	{
-		renderPanel.repaint();
+		renderPanel.repaint(); //view.renderPanel ne veut pas marcher
 		ticks++;
 
 		if (ticks % 2 == 0 && head1 != null && !over1 && !over2)

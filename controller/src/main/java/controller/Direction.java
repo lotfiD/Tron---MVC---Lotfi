@@ -1,5 +1,5 @@
 package controller;
-
+import model.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -9,9 +9,10 @@ public class Direction implements KeyListener  {
     
 	public ControllerFacade ControllerFacade;
 	
-     public Direction ()  {
+	//public Snake Snake; //Faut t-il l'instancier pour que ca marche
+	
+    public Direction ()  {
      }
-	//Comment utiliser les attributs présent dans le Snake ?
 	public static final int UP1 = 0, DOWN1 = 1, LEFT1 = 2, RIGHT1 = 3, SCALE1 = 5; //sélectionne la taille du 1er serpent
 
 	public static final int UP2 = 0, DOWN2 = 1, LEFT2 = 2, RIGHT2 = 3, SCALE2 = 5; // 2nd Joueur
@@ -65,15 +66,15 @@ public class Direction implements KeyListener  {
 			direction2 = DOWN2;  
 		}  
 
-		if (i == KeyEvent.VK_SPACE) // Espace pour pause
+		if (i == KeyEvent.VK_SPACE) // Espace relancer le jeu
 		{
 			if (over1)                // Pour relancer le jeu
 			{
-				model.Snake.startGame(); //pourquoi ca marche dans le view et pas ici
+				Snake.startGame(); //pourquoi ca marche pas
 			}
 			if (over2)                // Pour relancer le jeu
 			{
-				model.Snake.startGame();
+				Snake.startGame(); //pourquoi ca marche pas
 			}
 		}
 	}
