@@ -55,7 +55,7 @@ public class RenderPanel extends JPanel  //ViewFacade
 		g.fillRect(snake.head2.x * Snake.SCALE2, snake.head2.y * Snake.SCALE2, Snake.SCALE2, Snake.SCALE2); 
 		
 
-		String string = "Time: " + snake.time / 20;
+		String string = "Time: "; //+ snake.time / 20;
 		
 		g.setColor(Color.white); // L'ecriture du temps
 		

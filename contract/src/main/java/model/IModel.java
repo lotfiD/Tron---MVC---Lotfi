@@ -11,10 +11,7 @@ import java.util.List;
  */
 public interface IModel {
 	
-	public static void startGame() {
-		
-	}
-
+	
     /**
      * Gets the example by id.
      *

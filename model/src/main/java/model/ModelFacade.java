@@ -2,7 +2,6 @@ package model;
 
 import java.sql.SQLException;
 import java.util.List;
-
 import model.dao.ExampleDAO;
 
 /**
@@ -14,6 +13,10 @@ import model.dao.ExampleDAO;
 public final class ModelFacade implements IModel {
 	
 	public Snake Snake;
+	
+	public Direction Direction;
+	
+    public Mouvement Mouvement;
 
     /**
      * Instantiates a new model facade.
@@ -21,6 +24,8 @@ public final class ModelFacade implements IModel {
     public ModelFacade() {
         super();
         Snake = new Snake();//Snake
+        Mouvement = new Mouvement(); //Mouvement
+        Direction = new Direction(); //Direction
     }
     
 	public void startGame() {

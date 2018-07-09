@@ -1,15 +1,11 @@
-package controller;
-import model.*;
+package model;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
-
 public class Direction implements KeyListener  {
     
-	public ControllerFacade ControllerFacade;
-	
-	//public Snake Snake; //Faut t-il l'instancier pour que ca marche
+	public Snake Snake; 
 	
     public Direction ()  {
      }

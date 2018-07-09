@@ -2,21 +2,24 @@ package model;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.JFrame;
 import javax.swing.Timer;
-
 /**
  * @author Lotfi Djaileb
  */
-public class Snake
+
+public class Snake implements IModel
 {
 
 	public Snake snake1;
 	
 	public JFrame jframe;
 
-	public Timer timer; //= new Timer(20,this); // comment le faire marcher si il demande un action listenner?
+	//public Timer timer = new Timer(20,(ActionListener) this); // comment le faire marcher si il demande un action listenner?
 
 	public ArrayList<Point> snakeParts1 = new ArrayList<Point>();
 
@@ -54,7 +57,25 @@ public class Snake
 		head2 = new Point(118,72);
 		snakeParts1.clear();
 		snakeParts2.clear();
-		timer.start(); 
+	//	timer.start(); 
+	}
+
+	@Override
+	public Example getExampleById(int id) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Example getExampleByName(String name) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Example> getAllExamples() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }	
 

@@ -1,4 +1,4 @@
-package controller;
+package model;
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,9 +9,7 @@ import model.*;
 
 public class Mouvement implements ActionListener{
 	
-	public ControllerFacade ControllerFacade;
-	
-    //public RenderPanel renderPanel; //RenderPanel faut il l'instancier pour qu'il puisse marcher
+    public view.RenderPanel renderPanel;
     
 	public static final int UP1 = 0, DOWN1 = 1, LEFT1 = 2, RIGHT1 = 3, SCALE1 = 5; //sélectionne la taille du 1er serpent
 
@@ -26,9 +24,6 @@ public class Mouvement implements ActionListener{
 	public Point head1,head2;
 
 	public boolean over1 = false,over2 = false;
-
-	
-	// Comment utiliser les attributs présent dans Snake ?
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0)
