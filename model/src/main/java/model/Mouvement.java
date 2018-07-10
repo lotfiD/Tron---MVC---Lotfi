@@ -1,144 +1,132 @@
 package model;
+
 import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import view.*;
-import model.*;
-
 
 public class Mouvement implements ActionListener{
-	
+		
     public view.RenderPanel renderPanel;
     
-	public static final int UP1 = 0, DOWN1 = 1, LEFT1 = 2, RIGHT1 = 3, SCALE1 = 5; //sélectionne la taille du 1er serpent
-
-	public static final int UP2 = 0, DOWN2 = 1, LEFT2 = 2, RIGHT2 = 3, SCALE2 = 5; // 2nd Joueur
-	
-	public int ticks = 0, direction1 = DOWN1,direction2 = UP2, tailLength1 = 10,tailLength2 = 10, time;
-	
-	public ArrayList<Point> snakeParts1 = new ArrayList<Point>();
-	
-	public ArrayList<Point> snakeParts2 = new ArrayList<Point>();
-
-	public Point head1,head2;
-
-	public boolean over1 = false,over2 = false;
+    public Snake Snake;
+    public Mouvement (Snake Snake1)  { 
+    	this.Snake=Snake1;
+   }
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0)
 	{
-		renderPanel.repaint(); //view.renderPanel ne veut pas marcher
-		ticks++;
+		renderPanel.repaint(); // Le probléme est surement ici probleme d'uptade C'est sur c'est la mise a jour
+		Snake.ticks++;
 
-		if (ticks % 2 == 0 && head1 != null && !over1 && !over2)
+		if (Snake.ticks % 2 == 0 && Snake.head1 != null && !Snake.over1 && !Snake.over2)
 		{
-			time++;
+			Snake.time++;
 
-			snakeParts1.add(new Point(head1.x, head1.y)); // ajoute une ligne derriére le serpent
+			Snake.snakeParts1.add(new Point(Snake.head1.x, Snake.head1.y)); // ajoute une ligne derriére le serpent
 
-			if (direction1 == UP1)    // Les 4 directions fixe les limites de la map et les serpents ne peuvent se toucher
+			if (Snake.direction1 == Snake.UP1)    // Les 4 directions fixe les limites de la map et les serpents ne peuvent se toucher
 			{
-				if (head1.y - 1 >= 0 && noTailAt1(head1.x, head1.y - 1)&& noTailAt2(head1.x, head1.y - 1))
+				if (Snake.head1.y - 1 >= 0 && noTailAt1(Snake.head1.x, Snake.head1.y - 1)&& noTailAt2(Snake.head1.x, Snake.head1.y - 1))
 				{
-					head1 = new Point(head1.x, head1.y - 1);
+					Snake.head1 = new Point(Snake.head1.x, Snake.head1.y - 1);
 				}
 				else
 				{
-					over1 = true;
+					Snake.over1 = true;
 
 				}
 			}
 
-			if (direction1 == DOWN1)
+			if (Snake.direction1 == Snake.DOWN1)
 			{
-				if (head1.y + 1 < 73 && noTailAt1(head1.x, head1.y + 1)&& noTailAt2(head1.x, head1.y + 1))
+				if (Snake.head1.y + 1 < 73 && noTailAt1(Snake.head1.x, Snake.head1.y + 1)&& noTailAt2(Snake.head1.x, Snake.head1.y + 1))
 				{
-					head1 = new Point(head1.x, head1.y + 1);
+					Snake.head1 = new Point(Snake.head1.x, Snake.head1.y + 1);
 				}
 				else
 				{
-					over1 = true;
+					Snake.over1 = true;
 				}
 			}
 
-			if (direction1 == LEFT1)
+			if (Snake.direction1 == Snake.LEFT1)
 			{
-				if (head1.x - 1 >= 0 && noTailAt1(head1.x - 1, head1.y)&& noTailAt2(head1.x - 1, head1.y))
+				if (Snake.head1.x - 1 >= 0 && noTailAt1(Snake.head1.x - 1, Snake.head1.y)&& noTailAt2(Snake.head1.x - 1, Snake.head1.y))
 				{
-					head1 = new Point(head1.x - 1, head1.y);
+					Snake.head1 = new Point(Snake.head1.x - 1, Snake.head1.y);
 				}
 				else
 				{
-					over1 = true;
+					Snake.over1 = true;
 				}
 			} 
 
-			if (direction1 == RIGHT1)
+			if (Snake.direction1 == Snake.RIGHT1)
 			{
-				if (head1.x + 1 < 119 && noTailAt1(head1.x + 1, head1.y)&& noTailAt2(head1.x + 1, head1.y))
+				if (Snake.head1.x + 1 < 119 && noTailAt1(Snake.head1.x + 1, Snake.head1.y)&& noTailAt2(Snake.head1.x + 1, Snake.head1.y))
 				{
-					head1 = new Point(head1.x + 1, head1.y);
+					Snake.head1 = new Point(Snake.head1.x + 1, Snake.head1.y);
 				}
 				else
 				{
-					over1 = true;
+					Snake.over1 = true;
 				}
 			}
 		}
 			
-			if (ticks % 2 == 0 && head2 != null && !over1 && !over2) // 2nd Joueur
+			if (Snake.ticks % 2 == 0 && Snake.head2 != null && !Snake.over1 && !Snake.over2) // 2nd Joueur
 			{
-				time++;
+				Snake.time++;
 
-				snakeParts2.add(new Point(head2.x, head2.y)); // ajoute une ligne derriére le serpent
+				Snake.snakeParts2.add(new Point(Snake.head2.x, Snake.head2.y)); // ajoute une ligne derriére le serpent
 
-				if (direction2 == UP2)    // Les 4 directions fixe les limites de la map et les serpents ne peuvent se toucher
+				if (Snake.direction2 == Snake.UP2)    // Les 4 directions fixe les limites de la map et les serpents ne peuvent se toucher
 				{
-					if (head2.y - 1 >= 0 && noTailAt2(head2.x, head2.y - 1)&& noTailAt1(head2.x, head2.y - 1))
+					if (Snake.head2.y - 1 >= 0 && noTailAt2(Snake.head2.x, Snake.head2.y - 1)&& noTailAt1(Snake.head2.x, Snake.head2.y - 1))
 					{
-						head2 = new Point(head2.x, head2.y - 1);
+						Snake.head2 = new Point(Snake.head2.x, Snake.head2.y - 1);
 					}
 					else
 					{
-						over2 = true;
+						Snake.over2 = true;
 
 					}
 				}
 
-				if (direction2 == DOWN2)
+				if (Snake.direction2 == Snake.DOWN2)
 				{
-					if (head2.y + 1 < 73 && noTailAt2(head2.x, head2.y + 1)&& noTailAt1(head2.x, head2.y + 1))
+					if (Snake.head2.y + 1 < 73 && noTailAt2(Snake.head2.x, Snake.head2.y + 1)&& noTailAt1(Snake.head2.x, Snake.head2.y + 1))
 					{
-						head2 = new Point(head2.x, head2.y + 1);
+						Snake.head2 = new Point(Snake.head2.x, Snake.head2.y + 1);
 					}
 					else
 					{
-						over2 = true;
+						Snake.over2 = true;
 					}
 				}
 
-				if (direction2 == LEFT2)
+				if (Snake.direction2 == Snake.LEFT2)
 				{
-					if (head2.x - 1 >= 0 && noTailAt2(head2.x - 1, head2.y)&& noTailAt1(head2.x, head2.y - 1))
+					if (Snake.head2.x - 1 >= 0 && noTailAt2(Snake.head2.x - 1, Snake.head2.y)&& noTailAt1(Snake.head2.x, Snake.head2.y - 1))
 					{
-						head2 = new Point(head2.x - 1, head2.y);
+						Snake.head2 = new Point(Snake.head2.x - 1, Snake.head2.y);
 					}
 					else
 					{
-						over2 = true;
+						Snake.over2 = true;
 					}
 				} 
 
-				if (direction2 == RIGHT2)
+				if (Snake.direction2 == Snake.RIGHT2)
 				{
-					if (head2.x + 1 < 119 && noTailAt2(head2.x + 1, head2.y)&& noTailAt1(head2.x, head2.y + 1))
+					if (Snake.head2.x + 1 < 119 && noTailAt2(Snake.head2.x + 1, Snake.head2.y)&& noTailAt1(Snake.head2.x, Snake.head2.y + 1))
 					{
-						head2 = new Point(head2.x + 1, head2.y);
+						Snake.head2 = new Point(Snake.head2.x + 1, Snake.head2.y);
 					}
 					else
 					{
-						over2 = true;
+						Snake.over2 = true;
 					}
 				}
 
@@ -147,7 +135,7 @@ public class Mouvement implements ActionListener{
 
 	public boolean noTailAt1(int x, int y) // Permet quand tu touche l'arriére de mourrir
 	{
-		for (Point point : snakeParts1)
+		for (Point point : Snake.snakeParts1)
 		{
 			if (point.equals(new Point(x, y)))
 			{
@@ -158,7 +146,7 @@ public class Mouvement implements ActionListener{
 	} 
 	public boolean noTailAt2(int x, int y) // Permet quand tu touche l'arriére de mourrir
 	{
-		for (Point point : snakeParts2) // 2nd Joueur
+		for (Point point : Snake.snakeParts2) // 2nd Joueur
 		{
 			if (point.equals(new Point(x, y)))
 			{

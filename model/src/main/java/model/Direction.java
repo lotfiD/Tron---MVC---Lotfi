@@ -3,19 +3,14 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 
+
 public class Direction implements KeyListener  {
     
-	public Snake Snake; 
+	public Snake Snake;
 	
-    public Direction ()  {
+    public Direction (Snake Snake1)  { 
+    	this.Snake=Snake1;
      }
-	public static final int UP1 = 0, DOWN1 = 1, LEFT1 = 2, RIGHT1 = 3, SCALE1 = 5; //sélectionne la taille du 1er serpent
-
-	public static final int UP2 = 0, DOWN2 = 1, LEFT2 = 2, RIGHT2 = 3, SCALE2 = 5; // 2nd Joueur
-	
-	public int ticks = 0, direction1 = DOWN1,direction2 = UP2, tailLength1 = 10,tailLength2 = 10, time;
-
-	public boolean over1 = false,over2 = false;
 	
 	@Override
 	public void keyPressed(KeyEvent e) //Les touches et directions
@@ -23,54 +18,54 @@ public class Direction implements KeyListener  {
 		int i = e.getKeyCode();
 		int j = e.getKeyCode();
 		
-		if ((i == KeyEvent.VK_Q ) && direction1 != RIGHT1)
+		if ((i == KeyEvent.VK_Q ) && Snake.direction1 != Snake.RIGHT1)
 		{
-			direction1 = LEFT1;
+			Snake.direction1 = Snake.LEFT1;
 		}
 
-		if ((i == KeyEvent.VK_D ) && direction1 != LEFT1)
+		if ((i == KeyEvent.VK_D ) && Snake.direction1 != Snake.LEFT1)
 		{
-			direction1 = RIGHT1;
+			Snake.direction1 = Snake.RIGHT1;
 		}
 
-		if ((i == KeyEvent.VK_Z ) && direction1 != DOWN1)
+		if ((i == KeyEvent.VK_Z ) && Snake.direction1 != Snake.DOWN1)
 		{
-			direction1 = UP1;
+			Snake.direction1 = Snake.UP1;
 		}
 
-		if ((i == KeyEvent.VK_S ) && direction1 != UP1)
+		if ((i == KeyEvent.VK_S ) && Snake.direction1 != Snake.UP1)
 		{
-			direction1 = DOWN1;
+			Snake.direction1 = Snake.DOWN1;
 		}
-		if (( j == KeyEvent.VK_LEFT) && direction2 != RIGHT2)
+		if (( j == KeyEvent.VK_LEFT) && Snake.direction2 != Snake.RIGHT2)
 		{
-			direction2 = LEFT2;
-		}
-
-		if (( j == KeyEvent.VK_RIGHT) && direction2 != LEFT2)
-		{
-			direction2 = RIGHT2;
+			Snake.direction2 = Snake.LEFT2;
 		}
 
-		if (( j == KeyEvent.VK_UP) && direction2 != DOWN2)
+		if (( j == KeyEvent.VK_RIGHT) && Snake.direction2 != Snake.LEFT2)
 		{
-			direction2 = UP2;
+			Snake.direction2 = Snake.RIGHT2;
 		}
 
-		if (( j == KeyEvent.VK_DOWN) && direction2 != UP2)
+		if (( j == KeyEvent.VK_UP) && Snake.direction2 != Snake.DOWN2)
 		{
-			direction2 = DOWN2;  
+			Snake.direction2 = Snake.UP2;
+		}
+
+		if (( j == KeyEvent.VK_DOWN) && Snake.direction2 != Snake.UP2)
+		{
+			Snake.direction2 = Snake.DOWN2;  
 		}  
 
 		if (i == KeyEvent.VK_SPACE) // Espace relancer le jeu
 		{
-			if (over1)                // Pour relancer le jeu
+			if (Snake.over1)                // Pour relancer le jeu
 			{
-				Snake.startGame(); //pourquoi ca marche pas
+				Snake.startGame(); //pourquoi ca marche ici
 			}
-			if (over2)                // Pour relancer le jeu
+			if (Snake.over2)                // Pour relancer le jeu
 			{
-				Snake.startGame(); //pourquoi ca marche pas
+				Snake.startGame(); //pourquoi ca marche ici
 			}
 		}
 	}
